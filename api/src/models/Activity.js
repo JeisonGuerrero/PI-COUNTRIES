@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
 
-    timeLaps:{
+    duration:{
         type: DataTypes.INTEGER,
         allowNull: false,
     },
