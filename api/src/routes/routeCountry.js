@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const { getCountry } = require('../Controller/Controller.js');
 const { Country, Activity } = require('../db.js')
+const Sequelize = require('sequelize');
+const { substring } = Sequelize.Op;
 
 // import all controllers
 
@@ -46,7 +48,7 @@ routes.get('/', async (req, res) => {
                     res.status(400).send("Country not found")
                     
                 } catch (error) {
-                    console.log('error en tercer condicional', error)
+                    console.log('error en segundo condicional', error)
                 }
                 
             }
@@ -61,7 +63,7 @@ routes.get('/', async (req, res) => {
 });
 
 
-routes.get("/:id", async(req, res)=>{
+routes.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const country = await Country.findByPk(id,
@@ -76,5 +78,6 @@ routes.get("/:id", async(req, res)=>{
         console.log('error en getById', error)
     }
 })
+
 
 module.exports = routes;

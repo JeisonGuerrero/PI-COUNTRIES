@@ -2,16 +2,16 @@ const { Router } = require('express');
 
 const { Country, Activity} = require('../db')
 
-const routes = new Router();
+const route = new Router();
 
 // Add routes
 
-routes.post('/', async(req, res)=>{
-    const {id, name, dificulty, duration, season, countryName} = req.body;
+route.post('/', async(req, res)=>{
+    const { id, name, dificulty, duration, season, countryName } = req.body;
 
     try {
     
-    if(!name||!dificulty||!duration||!season||!countryName){
+    if(!id||!name||!dificulty||!duration||!season||!countryName){
      res.status(404).send("Missing parameters")
     }
    
@@ -41,4 +41,4 @@ routes.post('/', async(req, res)=>{
 });
 
 
-module.exports = routes;
+module.exports = route;
