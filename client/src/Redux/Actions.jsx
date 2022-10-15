@@ -73,3 +73,51 @@ export function filterByActivity(payload){
         payload
     }
 }
+
+export function ordenAlfabetico(payload) {
+    return {
+      type: "ORDEN_ALFABETICO",
+      payload,
+    };
+}
+  
+// export function ordenPorPuntaje(payload) {
+//     return {
+//       type: "ORDEN_PUNTAJE",
+//       payload,
+//     };
+// }
+  
+// export const busquedaPorNombre = (nombre) => {
+//     return async function (dispatch) {
+//       try {
+//         if (nombre) {
+//           let respuesta = await axios(
+//             `http://localhost:3001/videogames?name=${nombre}`
+//           );
+//           return dispatch({
+//             type: "BUSQUEDA_POR_NOMBRE",
+//             payload: respuesta.data,
+//           });
+//         } else {
+//           alert("INGRESA UN NOMBRE DE UN VIDEOGAME");
+//         }
+//       } catch (error) {
+//         console.log("ERROR EN LA LLAMADA POR QUERY NOMBRE ", error);
+//         alert("NO EXISTE EL VIDEOGAME");
+//       }
+//     };
+// };
+
+// export const formularioDeCreacion = async (payload) => {
+//     try {
+//       console.log("ACA ESTA PAYLOAD FORMULARIO ", JSON.stringify(payload));
+//       let crearReceta = await axios.post(
+//         "http://localhost:3001/videogames",
+//         payload
+//       );
+//       return crearReceta;
+//     } catch (error) {
+//       console.log("ERROR EN LA RUTA DE CREACION ", error);
+//     }
+// }
