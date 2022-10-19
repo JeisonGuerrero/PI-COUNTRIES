@@ -1,0 +1,21 @@
+.contenedor{
+    display: flex;
+    justify-content:space-around;
+    padding: 2rem;
+    
+}
+
+.filtro{
+    width: 15%;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.buscador{
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+.Continents{
+    color: Black
+}

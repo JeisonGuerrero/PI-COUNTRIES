@@ -1,0 +1,42 @@
+.DivPadreCard{
+    width: 100%;
+    height: 100%;
+    margin: 20px 10px 20px 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: rgb(5, 11, 16) 0px 10px 20px -10px;
+    text-align: left;
+    padding: 2rem;
+    background-color: rgba(73, 71, 71, 0.182);
+    backdrop-filter: blur(5px)
+}
+
+.Name{
+    color: white;
+    text-align: center;
+}
+
+.TituloName{
+    color: white;
+}
+
+.img{
+    width: 100%;
+    height: 50%;
+    margin-left: 5px;
+}
+
+.cardContinent{
+    color: white;
+    flex-direction: row;
+    display: inline;
+}
+
+.DivContinent{
+    color: white;
+    margin: 5px;
+}
+
+.link{
+    text-decoration: none;
+}

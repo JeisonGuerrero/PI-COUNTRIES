@@ -25,7 +25,8 @@ function reducer(state = initialState, { type, payload }) {
         case "GET_CONTINENTS":
             return{
                 ...state,
-                continents: payload
+                continents: payload,
+                countriesModificable: payload
             }
   
       case "COUNTRIES_BY_ID":
@@ -72,81 +73,81 @@ function reducer(state = initialState, { type, payload }) {
                     alert("EFE en filtro continents")
                   }
             }
-            
+            console.log(listaCountry, 'esto es filtro continent')
 
         return{
             ...state,
             countriesModificable: listaCountry
         }
 
-    // case "ORDEN_ALFABETICO":
-    //   const listaGames = [...state.countriesModificable];
-    //   let ordenados;
-    //   if (payload === "Az") {
-    //     ordenados = listaGames.sort((elementoUno, elementoDos) => {
-    //       if (
-    //         elementoUno.name.toLowerCase() < elementoDos.name.toLowerCase()
-    //       ) {
-    //         return -1;
-    //       } else {
-    //         return 1;
-    //       }
-    //     });
-    //   }
-    //   if (payload === "Za") {
-    //     ordenados = listaGames.sort((elementoUno, elementoDos) => {
-    //       if (
-    //         elementoUno.name.toLowerCase() < elementoDos.name.toLowerCase()
-    //       ) {
-    //         return 1;
-    //       } else {
-    //         return -1;
-    //       }
-    //     });
-    //   }
-    //   return {
-    //     ...state,
-    //     countriesModificable: ordenados,
-    //   };
+    case "ORDEN_ALFABETICO":
+      const listaCities = [...state.countriesModificable];
+      let ordenados;
+      if (payload === "Az") {
+        ordenados = listaCities.sort((elementoUno, elementoDos) => {
+          if (
+            elementoUno.name.toLowerCase() < elementoDos.name.toLowerCase()
+          ) {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+      }
+      if (payload === "Za") {
+        ordenados = listaCities.sort((elementoUno, elementoDos) => {
+          if (
+            elementoUno.name.toLowerCase() < elementoDos.name.toLowerCase()
+          ) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+      }
+      return {
+        ...state,
+        countriesModificable: ordenados,
+      };
 
-    // case "ORDEN_PUNTAJE":
-    //   let puntaje = [...state.countriesModificable];
-    //   if (payload === "puntajeMinimo") {
-    //     puntaje.sort((puntaje1, puntaje2) => {
-    //       if (
-    //         Number(puntaje1.rating) < Number(puntaje2.rating)
-    //       ) {
-    //         return -1;
-    //       } else {
-    //         return 1;
-    //       }
-    //     });
-    //   }
-    //   if (payload === "puntajeMaximo") {
-    //     puntaje.sort((puntaje1, puntaje2) => {
-    //       if (Number(puntaje1.rating) < Number(puntaje2)) {
-    //         return 1;
-    //       } else {
-    //         return -1;
-    //       }
-    //     });
-    //   }
-    //   return {
-    //     ...state,
-    //     countriesModificable: puntaje,
-    //   };
+    case "ORDEN_POPULATION":
+      let puntaje = [...state.countriesModificable];
+      if (payload === "populationMinimo") {
+        puntaje.sort((puntaje1, puntaje2) => {
+          if (
+            Number(puntaje1.rating) < Number(puntaje2.rating)
+          ) {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+      }
+      if (payload === "populationMaximo") {
+        puntaje.sort((puntaje1, puntaje2) => {
+          if (Number(puntaje1.rating) < Number(puntaje2)) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+      }
+      return {
+        ...state,
+        countriesModificable: puntaje,
+      };
 
-    // case "BUSQUEDA_POR_NOMBRE":
-    //   console.log("ACA ESTA PAYLOAD ", payload);
-    //   if (!payload) {
-    //     return alert("NO SE ENCUENTRA UNA RECETA CON ESE NOMBRE");
-    //   } else {
-    //     console.log("ENCONTRE ALGO ", payload);
-    //     return {
-    //       ...state,
-    //       countriesModificable: payload,
-    //     };
-    //   }
+    case "BUSQUEDA_POR_NOMBRE":
+      console.log("ACA ESTA PAYLOAD ", payload);
+      if (!payload) {
+        return alert("NO SE ENCUENTRA UNA RECETA CON ESE NOMBRE");
+      } else {
+        console.log("ENCONTRE ALGO ", payload);
+        return {
+          ...state,
+          countriesModificable: payload,
+        };
+      }
 
     // case "VIDEOGAME_CREADO":
     //   return {

@@ -1,0 +1,6 @@
+.DivPadreCards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 30px;
+    padding: 1rem;  
+}

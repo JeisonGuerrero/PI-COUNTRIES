@@ -1,0 +1,70 @@
+.DivPadre{
+    background-image: url('../../Images/Back-Inicial.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .Msg{
+      width: 80%;
+      height: 50%;
+  }
+  
+  
+  .ContenedorMsg{
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .ContenedorBttn{
+      width: auto;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .Bttn{
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  
+  .Mensaje {
+      font-size: 70px;
+      text-align: center;
+      font-family: 'Bungee Spice', cursive;
+  }
+  
+  .Button {
+      width: 100%;
+      height: 100%;
+      font-family: 'Bungee Spice', cursive;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .Button:hover {
+      width: 100%;
+      height: 0%;
+      color: #f8f8f8;
+      -webkit-box-shadow: 10px 10px 213px 81px rgba(142,245,235,0.71);
+      -moz-box-shadow: 10px 10px 213px 81px rgba(142,245,235,0.71);
+      box-shadow: 10px 10px 213px 81px rgba(142,245,235,0.71);
+      border-radius: 200px 200px 200px 200px;
+      -moz-border-radius: 200px 200px 200px 200px;
+      -webkit-border-radius: 200px 200px 200px 200px;
+      border: 0px none #ffffff;
+  }
+  
+  .Link{
+      text-decoration: none;   
+  }

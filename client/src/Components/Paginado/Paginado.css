@@ -1,0 +1,38 @@
+.contenedorPaginado {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content:space-around;
+  
+  }
+  
+  .boton {
+    box-shadow: rgb(195, 216, 238) 0px 10px 15px -10px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    width: 10%;
+    border: none;
+  }
+  .boton:hover {
+    background-color: #43930db3;
+    color: black;
+  }
+  
+  .pagCurrent {
+    background-color: black;
+    color: white;
+    border-radius: 30%;
+    padding: 0.5rem;
+    border: solid white;
+  }
+  .pag {
+    color: black;
+    border-radius: 50%;
+    border: solid white;
+    padding: 0.5rem;
+  }
