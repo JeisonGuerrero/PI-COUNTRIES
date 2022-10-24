@@ -64,7 +64,7 @@ function Filtros({ setPaginaEnEsteMomento }) {
     };
 
   return (
-    <div className='contenedor'>
+    <div className='contenedorF'>
     <select
       className='filtro'
       onChange={(e) => filterContinents(e)}
@@ -119,7 +119,7 @@ function Filtros({ setPaginaEnEsteMomento }) {
         type="text"
         value={busquedaNombre}
         onChange={(e) => buscadorPorNombre(e)}
-        placeholder="Busca por nombre de videogame"
+        placeholder="Busca por nombre del pais"
       />
       <input className='buscador' type="submit" value="Buscar" />
     </form>

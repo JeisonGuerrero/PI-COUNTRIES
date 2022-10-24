@@ -1,0 +1,32 @@
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    background-color: #70cebe;
+}
+
+.contenedorDetalle{
+    color: black;
+    text-transform: uppercase;
+    width: 50%;
+    padding: 2rem 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+    border-radius: 1.5rem;
+    box-shadow: rgb(2, 3, 3) 0px 20px 30px -10px;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.span{
+    color: black;
+    font-size: 1rem;
+    font-weight:bold;
+}
+.img{
+ width: 90%;
+ margin-right: 5px;
+ border-radius: 10px;
+ align-items: center;
+}

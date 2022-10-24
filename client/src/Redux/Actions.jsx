@@ -93,18 +93,18 @@ export const busquedaPorNombre = (nombre) => {
       try {
         if (nombre) {
           let respuesta = await axios(
-            `http://localhost:3001/videogames?name=${nombre}`
+            `http://localhost:3001/countries?name=${nombre}`
           );
           return dispatch({
             type: "BUSQUEDA_POR_NOMBRE",
             payload: respuesta.data,
           });
         } else {
-          alert("INGRESA UN NOMBRE DE UN VIDEOGAME");
+          alert("INGRESA UN NOMBRE DE UN PAIS");
         }
       } catch (error) {
-        console.log("ERROR EN LA LLAMADA POR QUERY NOMBRE ", error);
-        alert("NO EXISTE EL VIDEOGAME");
+        console.log("ERROR EN LA LLAMADA POR QUERY NOMBRE", error);
+        alert("Se debe colocar la primera letra en mayuscula o el pais ingresado no existe");
       }
     };
 };

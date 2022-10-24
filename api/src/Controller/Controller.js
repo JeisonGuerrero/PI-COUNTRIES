@@ -5,7 +5,7 @@ const getCountry = async () => {
         const promise = await axios('https://restcountries.com/v3.1/all');
         const countries = promise.data.map((ele)=>{
             return {
-                id: ele.ccn3 ? ele.ccn3 : ele.cca3,
+                id: ele.cca3 ? ele.cca3 : ele.cioc,
                 name: ele.name.common,
                 flags: ele.flags.png,
                 region: ele.region,

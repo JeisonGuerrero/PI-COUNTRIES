@@ -15,7 +15,7 @@ function Home() {
     dispatch(getCountries());
   }, [dispatch]);
 
-  const allCountries = useSelector((state) => state.countries);
+  const allCountries = useSelector((state) => state.countriesModificable);
 
   const [paginaEnEsteMomento, setPaginaEnEsteMomento] = useState(1);
   const cantidadPorPagina = 10;

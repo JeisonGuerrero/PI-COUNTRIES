@@ -41,7 +41,7 @@ function reducer(state = initialState, { type, payload }) {
         unCountry: {},
       };
 
-      case "FILTRO_ACTIVITIES":
+      case "FILTRO_ACTIVITY":
         console.log("este es el case filtro activities");
         const estadoCountries = [...state.countries];
         let listaCountries;
@@ -115,7 +115,7 @@ function reducer(state = initialState, { type, payload }) {
       if (payload === "populationMinimo") {
         puntaje.sort((puntaje1, puntaje2) => {
           if (
-            Number(puntaje1.rating) < Number(puntaje2.rating)
+            Number(puntaje1.population) < Number(puntaje2.population)
           ) {
             return -1;
           } else {
@@ -125,7 +125,7 @@ function reducer(state = initialState, { type, payload }) {
       }
       if (payload === "populationMaximo") {
         puntaje.sort((puntaje1, puntaje2) => {
-          if (Number(puntaje1.rating) < Number(puntaje2)) {
+          if (Number(puntaje1.population) < Number(puntaje2.population)) {
             return 1;
           } else {
             return -1;
@@ -140,7 +140,7 @@ function reducer(state = initialState, { type, payload }) {
     case "BUSQUEDA_POR_NOMBRE":
       console.log("ACA ESTA PAYLOAD ", payload);
       if (!payload) {
-        return alert("NO SE ENCUENTRA UNA RECETA CON ESE NOMBRE");
+        return alert("NO SE ENCUENTRA PAIS CON ESE NOMBRE");
       } else {
         console.log("ENCONTRE ALGO ", payload);
         return {
