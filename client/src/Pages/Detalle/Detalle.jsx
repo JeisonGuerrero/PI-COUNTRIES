@@ -40,7 +40,7 @@ function Detalle() {
             <p>{unCity.population} Personas</p>
             <span className='span'>Actividades:</span>
             {/* <p>{unCity.activities.map((e) => 
-              <p className= 'Gnr'>{e.name}</p>
+              <p className= 'act'>{e.name}</p>
               )}</p> */}
           </div>
         </div>
