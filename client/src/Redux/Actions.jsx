@@ -121,3 +121,10 @@ export const formularioDeCreacion = async (payload) => {
       console.log("ERROR EN LA RUTA DE CREACION ", error);
     }
 }
+
+export function ordenPorPopulation0(payload) {
+  return {
+    type: "ORDEN_POPULATION0",
+    payload,
+  };
+}

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountries } from '../../Redux/Actions';
 import Filtros from '../../Components/Filtros/Filtros';
 import Paginado from '../../Components/Paginado/Paginado';
+import BarraDeNavegacion from '../../Components/BarraDeNavegacion/BarraDeNavegacion';
 
 function Home() {
 
@@ -25,6 +26,7 @@ function Home() {
 
   return (
     <div className='DivPadreHome'>
+      <BarraDeNavegacion/>
       <Filtros setPaginaEnEsteMomento={setPaginaEnEsteMomento}/>
       <Paginado
         setPaginaEnEsteMomento={setPaginaEnEsteMomento}

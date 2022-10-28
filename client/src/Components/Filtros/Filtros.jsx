@@ -5,6 +5,7 @@ import {filtroContinents,
         filtroActivity, 
         ordenAlfabetico, 
         ordenPorPopulation,
+        ordenPorPopulation0,
         busquedaPorNombre,
         getContinents, 
         } from '../../Redux/Actions'
@@ -22,6 +23,13 @@ function Filtros({ setPaginaEnEsteMomento }) {
     }, [dispatch]);
   
     //ARRANCO CON LAS FUNCIONES QUE MANIPULAN MIS EVENTOS
+
+    //FILTRO POR PAISES CERO
+    const filterPopulation0 = (e) => {
+      let valor = e.target.value;
+      dispatch(ordenPorPopulation0(valor));
+      setPaginaEnEsteMomento(1);
+    };
   
     //FILTRO POR CONTINENTES:
     const filterContinents = (e) => {
@@ -123,6 +131,9 @@ function Filtros({ setPaginaEnEsteMomento }) {
       />
       <input className='buscador' type="submit" value="Buscar" />
     </form>
+
+    <button onClick={(e)=>filterPopulation0(e)} value = "OrdenCero" >Population Cero</button>
+
   </div>
   )
 }

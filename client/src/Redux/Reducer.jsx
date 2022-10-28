@@ -149,17 +149,24 @@ function reducer(state = initialState, { type, payload }) {
         };
       }
 
-    // case "VIDEOGAME_CREADO":
-    //   return {
-    //     ...state,
-    //     gameCreate: payload,
-    //   };
+      case "ORDEN_POPULATION0":
+        const allPaises = [...state.countries];
+        let listaPaises;
+        if(payload === 'OrdenCero'){
+            const paisesCero = allPaises.filter(c => c.population === 0)
+            listaPaises = paisesCero.length ? paisesCero : allPaises;
+            if(!paisesCero.length) {
+                alert("EFE en filtro paisesCero")
+              }
+        console.log(listaPaises, 'esto es filtro Paises Cero');
+      } 
 
-    // case "VIDEOGAME_NO_CREADO":
-    //   return {
-    //     ...state,
-    //     gameCreate: payload,
-    //   };
+    return{
+        ...state,
+        countriesModificable: listaPaises
+    }
+
+
 
        default: return state;
     
