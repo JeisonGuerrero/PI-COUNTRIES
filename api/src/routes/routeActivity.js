@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const { Country, Activities} = require('../db')
+const { Country, Activity} = require('../db')
 
 const route = new Router();
 
@@ -15,7 +15,7 @@ route.post('/', async(req, res)=>{
      return res.status(404).send("Missing parameters")
     }
    
-    const newActivity =await Activities.create({
+    const newActivity =await Activity.create({
         name,
         dificulty,
         duration,
