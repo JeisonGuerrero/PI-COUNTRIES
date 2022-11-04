@@ -1,14 +1,13 @@
 import React, {useEffect,useState} from "react";
-import {Link,useHistory}from "react-router-dom"
 import {useDispatch,useSelector} from "react-redux"
 import {formularioDeCreacion,getActivities} from "../../Redux/Actions"
 import "./Create.css"
 import validate from "../../Components/Validate/Validate"
+import BarraDeNavegacion from '../../Components/BarraDeNavegacion/BarraDeNavegacion';
 
 function Create(){
 
     const dispatch = useDispatch()
-    const history = useHistory()
     const allCountries=useSelector(state=>state.countries)
     
     let ListaDePaises=allCountries.map(e=>{
@@ -25,6 +24,7 @@ function Create(){
     useEffect(()=>{
         dispatch(getActivities())
     },[dispatch])
+
 
     function handleChange(e){
         setFormulario({ 
@@ -91,7 +91,6 @@ function Create(){
             name:"",dificulty:"", season:"",countries:[],duration:""
         })
         errors.firstTry=false
-        history.push("/home")
         }
         if(errors.firstTry){
             alert("complete los campos correspondientes")
@@ -109,7 +108,7 @@ function Create(){
     
     return(
         <div className="newActivity">
-            <Link className="Link" to="/home"><button className="buton">Home</button></Link>
+            <BarraDeNavegacion/>
             <form className="formActivty" onSubmit={e=>handleSubmit(e)}>
             <h1 className="Create">Crea la nueva actividad</h1>
                 <div className="info">

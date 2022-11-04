@@ -23,10 +23,8 @@ const BarraDeNavegacion = () => {
     }else{
         return(
             <div className='contenedor'>
-                <Link to="/">
+                <Link to="/home">
                     <img className='logo' src={logo} alt="logo"/>
-                </Link>
-                <Link className='volver' to="/home">
                 </Link>
             </div>
         )

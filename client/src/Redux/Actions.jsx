@@ -112,11 +112,11 @@ export const busquedaPorNombre = (nombre) => {
 export const formularioDeCreacion = async (payload) => {
     try {
       console.log("ACA ESTA PAYLOAD FORMULARIO ", JSON.stringify(payload));
-      let crearReceta = await axios.post(
+      let crearActivity = await axios.post(
         "http://localhost:3001/activities",
         payload
       );
-      return crearReceta;
+      return crearActivity;
     } catch (error) {
       console.log("ERROR EN LA RUTA DE CREACION ", error);
     }

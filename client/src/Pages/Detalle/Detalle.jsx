@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { countriesDetail, desmontarCountry } from '../../Redux/Actions';
+import BarraDeNavegacion from "../../Components/BarraDeNavegacion/BarraDeNavegacion";
 import './Detalle.css';
 
 function Detalle() {
@@ -22,6 +23,9 @@ function Detalle() {
   return (
     <div>
         <div className='contenedor'>
+          <div className='barraDeNavegacion'>
+          <BarraDeNavegacion/>
+          </div>
           <div className='contenedorDetalle'>
             <img className='img' src={unCity.flags} alt={unCity.name} />
             <span className='span'>Nombre:</span>

@@ -1,7 +1,11 @@
 .contenedor {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #70cebe;
+}
+
+.barraDeNavegacion{
+    height: 10%;
 }
 
 .contenedorDetalle{

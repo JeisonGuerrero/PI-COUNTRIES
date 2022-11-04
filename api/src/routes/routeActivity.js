@@ -1,38 +1,37 @@
 const { Router } = require('express');
 
-const { Country, Activity} = require('../db')
+const { Country, Activities} = require('../db')
 
 const route = new Router();
 
 // Add routes
 
 route.post('/', async(req, res)=>{
-    const { id, name, dificulty, duration, season, countryName } = req.body;
+    const { name, dificulty, duration, season, countries } = req.body;
 
     try {
     
-    if(!id||!name||!dificulty||!duration||!season||!countryName){
-     res.status(404).send("Missing parameters")
+    if(!name||!dificulty||!duration||!season||!countries){
+     return res.status(404).send("Missing parameters")
     }
    
-    const newActivity =await Activity.create({
-        id,
+    const newActivity =await Activities.create({
         name,
         dificulty,
         duration,
         season,
-        countryName
+        countries
     });
    
     const findCountry = await Country.findAll({
         where:{
-            name: countryName
+            name: countries
         }
     })
 
     await newActivity.addCountry(findCountry)
 
-    res.status(200).send(newActivity)
+    return res.status(200).send(newActivity)
     
    } catch (error) {
     console.log('Error en el post activity', error)

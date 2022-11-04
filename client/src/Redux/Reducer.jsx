@@ -159,18 +159,19 @@ function reducer(state = initialState, { type, payload }) {
                 alert("EFE en filtro paisesCero")
               }
         console.log(listaPaises, 'esto es filtro Paises Cero');
-      } 
-
-    return{
+            }
+        return{
         ...state,
         countriesModificable: listaPaises
     }
 
-
+    case "POST_ACTIVITIES":
+            return{
+                ...state,
+                activityCreate: payload
+            }
 
        default: return state;
-    
-
   }
 }
 
