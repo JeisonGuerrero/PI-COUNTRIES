@@ -8,7 +8,6 @@ import './Detalle.css';
 
 function Detalle () {
   const { id } = useParams();
-  console.log( "aca esta id ", id );
 
   const unCity = useSelector( ( state ) => state.unCountry );
   const dispatch = useDispatch();
@@ -41,16 +40,10 @@ function Detalle () {
           <p>{unCity.area} Km2</p>
           <span className='span'>Poblacion:</span>
           <p>{unCity.population} Personas</p>
-          {/* {console.log( 'aquiiiiiiiii' )} */}
-          {/* {console.log( unCity )} */}
-          {/* {console.log( unCity.Activities )} */}
-
-          {/* <p>{unCity.Activities[0].name}</p> */}
-
-          {/* <span className='span'>Actividades:</span> */}
-          {/* <p>{unCity.Activities.map( ( e ) =>
-            ( <p className='act'>{e.name}</p> )
-          )}</p> */}
+          <span className='span'>Actividades:</span>
+          <p>{unCity.Activities?.map( ( e ) =>
+             <p>Nombre:  {e.name} </p>
+          )}</p>
         </div>
       </div>
     </div>

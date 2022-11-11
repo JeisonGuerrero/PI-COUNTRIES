@@ -1,8 +1,9 @@
 import React, {useEffect,useState} from "react";
-import {useDispatch,useSelector} from "react-redux"
-import {formularioDeCreacion,getActivities} from "../../Redux/Actions"
-import "./Create.css"
-import validate from "../../Components/Validate/Validate"
+import {Link} from "react-router-dom";
+import {useDispatch,useSelector} from "react-redux";
+import {formularioDeCreacion,getCountries} from "../../Redux/Actions";
+import "./Create.css";
+import validate from "../../Components/Validate/Validate";
 import BarraDeNavegacion from '../../Components/BarraDeNavegacion/BarraDeNavegacion';
 
 function Create(){
@@ -16,13 +17,14 @@ function Create(){
             flag:e.flags,
         })
     })
+    
     const [select,setSelect]=useState("")
     const [errors,setErrors]=useState({firstTry:true})
     const [formulario,setFormulario]=useState({
-        name:"", dificulty:"", season:"",countries:[],duration:""
+        name:"", dificulty:"", season:"",duration:"",countries:[]
     })
     useEffect(()=>{
-        dispatch(getActivities())
+        dispatch(getCountries())
     },[dispatch])
 
 
@@ -88,22 +90,22 @@ function Create(){
         dispatch(formularioDeCreacion(formulario))
         alert("Se ha creado la actvidad")
         setFormulario({
-            name:"",dificulty:"", season:"",countries:[],duration:""
+            name:"",dificulty:"", season:"",duration:"",countries:[]
         })
         errors.firstTry=false
-        }
-        if(errors.firstTry){
-            alert("complete los campos correspondientes")
-        }
     }
-    function handleE(e) {
-        e.preventDefault();
-        setErrors(validate({
-            ...formulario,
-            [e.target.name]: e.target.value,
-            countries: [...formulario.countries, e.target.value]
-        }))
-        handleSubmit(e)
+    if(errors.firstTry){
+        alert("complete los campos correspondientes")
+    }
+}
+function handleE(e) {
+    e.preventDefault();
+    setErrors(validate({
+        ...formulario,
+        [e.target.name]: e.target.value,
+        countries: [...formulario.countries, e.target.value]
+    }))
+     handleSubmit(e)
     }
     
     return(
@@ -191,10 +193,14 @@ function Create(){
                     errors.duration || 
                     errors.season || 
                     errors.countries ?
-                    <button  disabled>Crear Actividad</button>
-                    :<button className="Boton" onClick={e => handleE(e)}>Crear Actividad</button>}
+                    <Link to="/home">
+                        <button  disabled>Crear Actividad</button>
+                    </Link>
+                    :<Link to="/home">
+                    <button className="Boton" onClick={e => handleE(e)} >Crear Actividad</button>
+                    </Link>
+                    }
                     </div>
-                {/* <button onClick={e=> handleC(e)}>XD</button> */}
                 <br/>
             </form>
         </div>

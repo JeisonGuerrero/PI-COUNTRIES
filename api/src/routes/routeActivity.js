@@ -39,5 +39,15 @@ route.post('/', async(req, res)=>{
 
 });
 
+route.get('/',async(req,res)=>{
+    try {
+        let byActivities = await Activities.findAll({
+            include:[Countries]
+        });
+        return res.json(byActivities)
+    } catch (error) {
+        console.log('Error en get activities en la funcion ' + error)
+    }
+})
 
 module.exports = route;
