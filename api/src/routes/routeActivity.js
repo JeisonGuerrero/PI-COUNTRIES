@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const { Country, Activity} = require('../db')
+const { Countries, Activities} = require('../db')
 
 const route = new Router();
 
@@ -15,7 +15,7 @@ route.post('/', async(req, res)=>{
      return res.status(404).send("Missing parameters")
     }
    
-    const newActivity =await Activity.create({
+    const newActivity =await Activities.create({
         name,
         dificulty,
         duration,
@@ -23,13 +23,13 @@ route.post('/', async(req, res)=>{
         countries
     });
    
-    const findCountry = await Country.findAll({
+    const findCountry = await Countries.findAll({
         where:{
             name: countries
         }
     })
 
-    await newActivity.addCountry(findCountry)
+    await newActivity.addCountries(findCountry)
 
     return res.status(200).send(newActivity)
     
