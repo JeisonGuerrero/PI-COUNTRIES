@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Country } = require('../db')
+const { Countries } = require('../db')
 // Importar todos los routers;
 const routerCountry = require('./routeCountry.js');
 const routerActivity = require('./routeActivity.js');
@@ -13,7 +13,7 @@ router.use('/countries', routerCountry);
 router.use('/activities', routerActivity);
 router.get('/continents', async (req, res) => {
     try {
-        const countries = await Country.findAll();
+        const countries = await Countries.findAll();
         const continents = new Set(countries.map((c)=> c.region))
         console.log('esto es continents' , continents)
         let allContinents = [];
